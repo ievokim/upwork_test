@@ -1,0 +1,230 @@
+:root {
+  --color-white: #fff;
+  --color-black: #000;
+  --color-green: #4eac7f;
+  --color-gray-200: #6d6d6d;
+  --color-gray-400: #e0e0e0;
+  --color-gray-logo: #000005;
+  --color-blue-100: #2c63ae;
+  --color-blue-light: #f3f7fd;
+  --font-sans-serif: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  --font-serif: 'Times New Roman', Times, Baskerville, Georgia, serif;
+  --base-background-color: var(--color-blue-light);
+  --base-font-family: var(--font-sans-serif);
+  --base-font-size: 13px;
+  --base-line-height: 1.5;
+  --base-text-color: var(--color-gray-logo);
+  --base-min-width: 320px;
+  --base-border-radius: 10px;
+  --headings-sizes-h1: 21px;
+  --headings-sizes-h2: 15px;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--base-text-color);
+  background: var(--base-background-color);
+  font: var(--base-font-size) / var(--base-line-height) var(--base-font-family);
+  min-width: var(--base-min-width);
+  font-weight: 400;
+  overflow-anchor: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.icon {
+  --i-size: 20px;
+
+  width: var(--i-size);
+  min-width: var(--i-size);
+  height: var(--i-size);
+  position: relative;
+  fill: currentColor;
+  stroke: currentColor;
+  color: inherit;
+}
+h1,
+.h1 {
+  font-size: var(--headings-sizes-h1);
+  font-weight: 400;
+}
+h2,
+.h2 {
+  font-size: var(--headings-sizes-h2);
+  font-weight: 400;
+}
+a {
+  text-decoration: none;
+  color: var(--color-blue-100);
+}
+a:hover {
+  text-decoration: underline;
+}
+.mobile {
+  display: flex !important;
+}
+.desktop {
+  display: none !important;
+}
+@media (min-width: 600px) {
+  .mobile {
+    display: none !important;
+  }
+  .desktop {
+    display: flex !important;
+  }
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 816px;
+  margin: 0 auto;
+  border-radius: var(--base-border-radius);
+  background: var(--color-white);
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+}
+.groups {
+  position: relative;
+  padding: 98px 20px;
+}
+.groups_head {
+  padding: 39px 40.05px;
+}
+.groups_head h1 {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  align-content: center;
+  gap: 9.07px;
+  color: var(--color-gray-logo);
+}
+.groups_body {
+  position: relative;
+}
+.groups_body .column {
+  position: relative;
+  flex: 0.75;
+}
+.groups_body .column-title {
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  color: var(--color-gray-200);
+}
+.groups_body .column:nth-child(1) {
+  flex: 2;
+}
+.groups_body .column:nth-child(3) {
+  flex: none;
+  width: 108px;
+  min-width: 108px;
+}
+.groups_body-head {
+  position: relative;
+  padding: 0 40.05px 7px 40.05px;
+  display: flex;
+  gap: 20px 40px;
+  color: var(--color-gray-200);
+}
+.groups_body-head:not(:last-child) {
+  border-bottom: 1px solid var(--color-gray-200);
+}
+.groups_body-items {
+  position: relative;
+  padding: 0 40.05px;
+}
+.group {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  gap: 20px 40px;
+  padding: 20px 0;
+}
+.group:not(:last-child) {
+  border-bottom: 1px solid var(--color-gray-400);
+}
+.group .title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  gap: 9.33px;
+  color: var(--color-blue-100);
+  margin-bottom: 4px;
+}
+.group .title .icon {
+  --i-size: 14px;
+  color: var(--color-black);
+}
+.group .description {
+  color: var(--color-gray-logo);
+  margin-bottom: 8px;
+}
+.group .owner span {
+  color: var(--color-gray-200);
+}
+
+@media (max-width: 599px) {
+  .group {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 20px;
+  }
+  .groups_body .column {
+    flex: 1;
+  }
+  .groups_body .column:nth-child(1) {
+    flex: none;
+    width: 100%;
+    min-width: 100%;
+  }
+}
+
+.membership {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.membership-tag {
+  position: relative;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  height: 22px;
+  padding: 6px 10px 4px 10px;
+  text-transform: uppercase;
+  color: var(--color-white);
+  background: var(--color-green);
+  border-radius: var(--base-border-radius);
+}
+.membership > *:not(:last-child) {
+  margin-bottom: 15px;
+}
+.membership button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  align-content: center;
+  gap: 4px;
+  color: var(--color-gray-200);
+  background: none;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.membership button .icon {
+  --i-size: 18px;
+}
